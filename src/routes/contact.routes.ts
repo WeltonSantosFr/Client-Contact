@@ -10,8 +10,8 @@ const routes = Router();
 export const contactRoutes = () => {
   routes.post("/", tokenMiddleware, contactCreateController);
   routes.get("/", contactListController);
-  routes.patch("/", tokenMiddleware, contactUpdateController);
-  routes.delete("/", tokenMiddleware, contactDeleteController);
+  routes.patch("/:id", tokenMiddleware, contactUpdateController);
+  routes.delete("/:id", tokenMiddleware, contactDeleteController);
 
   return routes;
 };
